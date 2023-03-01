@@ -14,4 +14,14 @@ CREATE TABLE applications(
     notes VARCHAR(500)
 );
 
-INSERT INTO applications(name, status, job_title, job_posting, notes) VALUES ('testCompany', 'interested', 'tester', 'http://test.com', 'misc notes');
+INSERT INTO applications(name, status, job_title, job_posting, notes) 
+VALUES 
+    ('Microsoft', 'interested', 'Software Engineer', 'http://microsoft.test', 'misc notes'),
+    ('LinkedIn', 'applied', 'UI Engineer', 'http://linkedin.test', ''),
+    ('Google', 'on-site', 'Test Engineer', 'http://google.test', ''),
+    ('Pizza Hut', 'approved', 'Pizza Cook', 'http://pizza.test', 'total comp: health care + pizza'),
+    ('TP Tea', 'offered', 'Boba Engineer', 'http://tptea.test', 'perk: free boba!'),
+    ('Taco Bell', 'rejected', 'Food Sampler', 'http://tacobell.test', '');
+
+
+
