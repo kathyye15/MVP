@@ -1,5 +1,17 @@
 const models = require('./models');
 
+const getAll = (req, res) => {
+  models.getAll()
+    .then((app) => {
+      if (app.rows) {
+        res.send(app.rows)
+      } else {
+        res.send(`Database is empty. Nothing to get.`)
+      }
+    })
+    .catch(e => res.status(400).send('Failed to retrieve apps, error: ', e.message))
+};
+
 const getApp = (req, res) => {
   const appId = req.params.appId;
   models.getApp(appId)
@@ -48,6 +60,7 @@ const deleteApp = (req, res) => {
 };
 
 module.exports = {
+  getAll,
   getApp,
   addApp,
   updateApp,

@@ -1,5 +1,9 @@
 const db = require('../database');
 
+const getAll = () => {
+    return db.query(`SELECT * FROM applications`);
+  };
+
 const getApp = (appId) => {
   return db.query(`SELECT * FROM applications a WHERE a.id = ${appId}`);
 };
@@ -32,6 +36,7 @@ const deleteApp = (appId) => {
   };
 
 module.exports = {
+    getAll,
     getApp,
     addApp,
     updateApp,
