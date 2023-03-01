@@ -1,13 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { createRoot } from 'react-dom/client';
+import ApplicationList from './applicationList';
+import TopComponent from './topComponent';
+import Modal from './common/Modal.jsx';
+import ModalContext from './contexts/modalContext.js';
 
 export default function App() {
-    return (
-      <div>
-        <h2>Welcome to my app</h2>
-      </div>
-    );
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalContent, setModalContent] = useState([]);
+  const [rows, setRows] = useState([]);
+  useEffect(
+    () => {
+      axios
+        .get('/applications')
+        .then(res => setRows(res.data))
+        .catch(err => { throw err; })
+    }, []
+  );
+
+  const useModal = (content) => {
+    if (!modalIsOpen) {
+      setModalContent(content);
+      setModalIsOpen(true);
+    } else {
+      console.error('Cannot open new modal while a another modal is currently open, close the current modal before trying to open a new one')
+    }
   }
+
+  return (
+    <ModalContext.Provider value={{modal: useModal, dismiss: () => setModalIsOpen(false)}}>
+      <Modal isOpen={modalIsOpen}>
+        {modalContent}
+      </Modal>
+      <div>
+        <h2>Job Board</h2>
+        <TopComponent />
+        <ApplicationList rows={rows}/>
+      </div>
+    </ModalContext.Provider>
+  );
+}
 
 const container = document.getElementById('app');
 const root = createRoot(container);
