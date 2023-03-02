@@ -1,28 +1,45 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import CustomInput from './CustomInput.jsx';
 
-export default function Form({ content, edittable, onDismiss }) {
-  const handleSubmit = (e) => {
+export default function Form({ content, onDismiss, setRows, rows, button, id}) {
+  const handleSubmit = (e, button) => {
     e.preventDefault();
-    // TODO send post request
-
+    const formData = new FormData(e.target);
+    let data = {};
+    for (const [key, value] of formData) {
+      data[key] = value;
+    }
+    if (button === 'Submit') {
+      axios.post('/applications', data)
+        .then(() => axios.get('/applications'))
+        .then((res) => setRows([...res.data]))
+        .catch((err) => console.log(err))
+    } else if (button === 'Update') {
+        axios.put(`/applications/${id}`, data)
+          .then(() => axios.get('/applications'))
+          .then((response) => {
+            setRows([...response.data])
+          })
+          .catch((err) => console.log(err))
+    }
     // close modal if dismissModal function is passed
     onDismiss?.();
   };
 
   const edittableForm = (
-    <form>
+    <form onSubmit={(e)=> {handleSubmit(e, button)}}>
       <div>
-        Job Title: <CustomInput type="text" name="job_title" value={content?.job_title} />
+        Company Name: <CustomInput type="text" name="name" value={content?.name} />
       </div>
       <div>
-        Company Name: <CustomInput type="text" name="company_name" value={content?.company_name} />
+        Job Title: <CustomInput type="text" name="job_title" value={content?.job_title} />
       </div>
       <div>
         Job Posting: <CustomInput type="text" name="job_posting" value={content?.job_posting} />
       </div>
       <label>Status: </label>
-        <select>
+        <select name="status">
           <option>interested</option>
           <option>applied</option>
           <option>interview</option>
@@ -33,7 +50,7 @@ export default function Form({ content, edittable, onDismiss }) {
       <div>
         Notes: <CustomInput type="text" name="notes" value={content?.notes} />
       </div>
-      <button type="button" onClick={handleSubmit}>submit</button>
+      <button type="submit">{button}</button>
     </form>
   );
 

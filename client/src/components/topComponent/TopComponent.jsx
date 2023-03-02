@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from 'react';
 import modalContext from '../contexts/modalContext.js';
 import Form from '../form';
 
-export default function TopComponent() {
+export default function TopComponent({ setRows, rows }) {
   const { useModal, dismissModal } = useContext(modalContext);
 
-  const formComponent = <Form edit={true} onDismiss={dismissModal}/>;
+  const formComponent = <Form onDismiss={dismissModal} setRows={setRows} rows={rows} button='Submit'/>;
   const openModalForm = () => useModal(formComponent);
 
   return (

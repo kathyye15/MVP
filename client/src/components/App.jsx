@@ -5,6 +5,7 @@ import ApplicationList from './applicationList';
 import TopComponent from './topComponent';
 import Modal from './common/Modal.jsx';
 import ModalContext from './contexts/modalContext.js';
+import RowsContext from './contexts/rowsContext.js';
 
 export default function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -33,15 +34,17 @@ export default function App() {
   }
 
   return (
-    <ModalContext.Provider value={{useModal: useModal, dismissModal: dismissModal}}>
-      <Modal isOpen={modalIsOpen}>
-        {modalContent}
-      </Modal>
-      <div>
-        <h2>Job Board</h2>
-        <TopComponent />
-        <ApplicationList rows={rows}/>
-      </div>
+    <ModalContext.Provider value={{useModal, dismissModal}}>
+      <RowsContext.Provider value={{rows, setRows}}>
+        <Modal isOpen={modalIsOpen}>
+          {modalContent}
+        </Modal>
+        <div>
+          <h2>Job Board</h2>
+          <TopComponent setRows={setRows} rows={rows}/>
+          <ApplicationList rows={rows}/>
+        </div>
+      </RowsContext.Provider>
     </ModalContext.Provider>
   );
 }
