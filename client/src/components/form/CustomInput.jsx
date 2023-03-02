@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-export default function CustomInput({ edit, name, value, type }) {
+export default function CustomInput({ name, value, type }) {
   const [val, setVal] = useState(value);
-  const [isEditable, setIsEditable] = useState(edit);
-
   const onChange = (ev) => {
     setVal(ev.target.value);
-  }
-  const confirmEdit = (ev) => {
-    ev.preventDefault();
-    setIsEditable(false);
-  }
+  };
 
-  const editableInput = (
-    <input className='input--dynamic' type={type || "text"} name={name} value={val || ""} onBlur={confirmEdit} onChange={onChange} />
+  return (
+    <input className='input--dynamic' type={type || "text"} name={name} value={val || ""} onChange={onChange} />
   );
-  const staticInput = (
-    <input className='input--static' type={type || "text"} name={name} onClick={() => setIsEditable(true)} value={val ?? ""} readOnly/>
-  );
-  return isEditable ? editableInput : staticInput;
-}
+};
