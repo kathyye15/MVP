@@ -40,7 +40,9 @@ export default function App() {
           {modalContent}
         </Modal>
         <div>
-          <h2>Job Board</h2>
+          <div className="header">
+            <h2>Job Board</h2>
+          </div>
           <TopComponent setRows={setRows} rows={rows}/>
           <ApplicationList rows={rows}/>
         </div>

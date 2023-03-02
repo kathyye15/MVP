@@ -1,3 +1,64 @@
 .input--static {
   border: 1px solid black;
 }
+
+#modal-portal {
+}
+
+.container {
+  background-color: #415A77;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #E0E1DD;
+  box-sizing: border-box;
+  background-color: #D9E0E8
+  ;
+}
+
+button[type=submit] {
+  background-color: #0D1B2A;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+button {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #DEE2E6;
+  color: #0D1B2A;
+}
+
+body{
+  background-color: #778DA9;
+  font-family: 'Noto Sans', sans-serif;
+  color: white
+}
+
+b {
+  color: #D9E0E8
+}
+
+.header {
+  padding: 1rem;
+  text-align: center;
+  background: #1B263B;
+  color: white;
+  font-size: 2rem;
+}
