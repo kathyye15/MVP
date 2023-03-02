@@ -15,7 +15,7 @@ export default function ListItem({ item, index }) {
         <div className="company">{item.name}</div>
         <div className="job-title">{item.job_title}</div>
         <div className="status">{item.status}</div>
-        <button className="edit"><i class="fa-solid fa-pen-to-square" /></button>
+        <button className="edit"><i className="fa-solid fa-pen-to-square" /></button>
       </div>
     </li>
   );

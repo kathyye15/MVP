@@ -6,7 +6,7 @@ export default function CustomInput({ name, value, type }) {
     setVal(ev.target.value);
   };
   const required = <input className='input--dynamic' type={type || "text"} name={name} value={val || ""} onChange={onChange} required/>
-  const optional = <input className='input--dynamic' type={type || "text"} name={name} value={val || ""} onChange={onChange} />
+  const optional = <textarea className='input--dynamic' type={type || "text"} name={name} value={val || ""} onChange={onChange} style={{height: "15rem"}}/>
 
   return name === 'notes' ? optional: required;
 };

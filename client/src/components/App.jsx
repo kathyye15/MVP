@@ -39,12 +39,14 @@ export default function App() {
         <Modal isOpen={modalIsOpen}>
           {modalContent}
         </Modal>
-        <div>
+        <div className='main'>
           <div className="header">
             <h2>Job Board</h2>
           </div>
-          <TopComponent setRows={setRows} rows={rows}/>
-          <ApplicationList rows={rows}/>
+          <div className="content">
+            <TopComponent setRows={setRows} rows={rows}/>
+            <ApplicationList rows={rows}/>
+          </div>
         </div>
       </RowsContext.Provider>
     </ModalContext.Provider>
