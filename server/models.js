@@ -1,7 +1,7 @@
 const db = require('../database');
 
 const getAll = () => {
-    return db.query(`SELECT * FROM applications`);
+    return db.query(`SELECT * FROM applications ORDER BY id ASC`);
   };
 
 const getApp = (appId) => {
