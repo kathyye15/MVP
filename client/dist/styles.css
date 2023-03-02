@@ -62,3 +62,34 @@ b {
   color: white;
   font-size: 2rem;
 }
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0 30rem 0 30rem;
+  justify-content: 'center';
+
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #415A77;
+  color: #1B263B;
+
+}
+
+li div {
+  padding: 0px;;
+  flex: 1;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.col-header {
+  color: #1B263B;
+  font-weight: bolder;
+}
