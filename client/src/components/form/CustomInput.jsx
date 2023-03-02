@@ -13,10 +13,10 @@ export default function CustomInput({ edit, name, value, type }) {
   }
 
   const editableInput = (
-    <input className='input--dynamic' type={type || "text"} name={name} value={val ?? "placeholder"} onBlur={confirmEdit} onChange={onChange}/>
+    <input className='input--dynamic' type={type || "text"} name={name} value={val || ""} onBlur={confirmEdit} onChange={onChange} />
   );
   const staticInput = (
-    <input className='input--static' type={type || "text"} name={name} onClick={() => setIsEditable(true)} value={val ?? "placeholder"} readOnly/>
+    <input className='input--static' type={type || "text"} name={name} onClick={() => setIsEditable(true)} value={val ?? ""} readOnly/>
   );
   return isEditable ? editableInput : staticInput;
 }

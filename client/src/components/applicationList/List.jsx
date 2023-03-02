@@ -4,7 +4,7 @@ import ListItem from './ListItem.jsx';
 export default function List({ rows }) {
   return (
     <ul className="applicaion-list">
-      {rows.map(ele => <ListItem item={ele} key={ele.id} />)}
+      {rows.map((ele, i) => <ListItem item={ele} key={ele.id} index={i} />)}
     </ul>
   );
 }
