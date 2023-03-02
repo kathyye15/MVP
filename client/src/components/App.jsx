@@ -24,12 +24,16 @@ export default function App() {
       setModalContent(content);
       setModalIsOpen(true);
     } else {
-      console.error('Cannot open new modal while a another modal is currently open, close the current modal before trying to open a new one')
+      console.error('Cannot open new modal while another modal is currently open, close the current modal before trying to open a new one')
     }
   }
 
+  const dismissModal = () => {
+    setModalIsOpen(false);
+  }
+
   return (
-    <ModalContext.Provider value={{modal: useModal, dismiss: () => setModalIsOpen(false)}}>
+    <ModalContext.Provider value={{useModal: useModal, dismissModal: dismissModal}}>
       <Modal isOpen={modalIsOpen}>
         {modalContent}
       </Modal>

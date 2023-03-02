@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CustomInput from './CustomInput.jsx';
 
-export default function Form({ content, edittable, onDismiss }) {
+export default function Form({ content, onDismiss }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO send post request

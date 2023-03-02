@@ -3,12 +3,14 @@ import modalContext from '../contexts/modalContext.js';
 import Form from '../form';
 
 export default function TopComponent() {
-  const { modal, dismiss } = useContext(modalContext);
-  const formComponent = <Form edit={true} onDismiss={dismiss}/>;
+  const { useModal, dismissModal } = useContext(modalContext);
+
+  const formComponent = <Form edit={true} onDismiss={dismissModal}/>;
+  const openModalForm = () => useModal(formComponent);
 
   return (
     <div className="add">
-      <button onClick={() => modal(formComponent)}>Add new application here...</button>
+      <button onClick={openModalForm}>Add new application here...</button>
     </div>
   );
 }
