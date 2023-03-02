@@ -19,9 +19,9 @@ VALUES
     ('Microsoft', 'interested', 'Software Engineer', 'http://microsoft.test', 'misc notes'),
     ('LinkedIn', 'applied', 'UI Engineer', 'http://linkedin.test', ''),
     ('Google', 'on-site', 'Test Engineer', 'http://google.test', ''),
-    ('Pizza Hut', 'approved', 'Pizza Cook', 'http://pizza.test', 'total comp: health care + pizza'),
-    ('TP Tea', 'offered', 'Boba Engineer', 'http://tptea.test', 'perk: free boba!'),
-    ('Taco Bell', 'rejected', 'Food Sampler', 'http://tacobell.test', '');
+    ('Pizza Hut', 'approved', 'Pizza Sampler', 'http://pizza.test', 'total comp: health care + pizza'),
+    ('TP Tea', 'offered', 'Boba Sampler', 'http://tptea.test', 'perk: free boba!'),
+    ('Taco Bell', 'rejected', 'Taco Sampler', 'http://tacobell.test', '');
 
 
 
