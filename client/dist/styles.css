@@ -132,3 +132,14 @@ li div {
   display: flex;
   justify-content: flex-end;
 }
+
+.addNewApp, .edit, .delete {
+  font-family: 'Noto Sans', sans-serif; 
+  height: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+} 
+
+.edit, .delete {
+  width: 2rem;
+}

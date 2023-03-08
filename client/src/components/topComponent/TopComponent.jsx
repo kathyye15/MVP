@@ -10,7 +10,7 @@ export default function TopComponent({ setRows, rows }) {
 
   return (
     <div className="add">
-      <button onClick={openModalForm}>Add new application here...</button>
+      <button className="addNewApp" onClick={openModalForm}>Add new application here...</button>
     </div>
   );
 }

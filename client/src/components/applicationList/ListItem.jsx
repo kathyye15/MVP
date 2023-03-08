@@ -27,7 +27,7 @@ export default function ListItem({ item, index, pgID }) {
         <div className="job-title">{item.job_title}</div>
         <div className="status">{item.status}</div>
         <button className="edit" onClick={() => useModal(formComponent)} ><i className="fa-solid fa-pen-to-square" /></button>
-        <button onClick={(e)=> {deleteApp(e, item.id)}}><i className="fa-regular fa-trash-can"/></button>
+        <button className="delete" onClick={(e)=> {deleteApp(e, item.id)}}><i className="fa-regular fa-trash-can"/></button>
       </div>
     </li>
   );
