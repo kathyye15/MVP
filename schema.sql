@@ -17,11 +17,7 @@ CREATE TABLE applications(
 INSERT INTO applications(name, status, job_title, job_posting, notes) 
 VALUES 
     ('Microsoft', 'interested', 'Software Engineer', 'http://microsoft.test', 'misc notes'),
-    ('LinkedIn', 'applied', 'UI Engineer', 'http://linkedin.test', ''),
-    ('Google', 'on-site', 'Test Engineer', 'http://google.test', ''),
-    ('Pizza Hut', 'approved', 'Pizza Sampler', 'http://pizza.test', 'total comp: health care + pizza'),
-    ('TP Tea', 'offered', 'Boba Sampler', 'http://tptea.test', 'perk: free boba!'),
-    ('Taco Bell', 'rejected', 'Taco Sampler', 'http://tacobell.test', '');
-
+    ('LinkedIn', 'applied', 'UI Engineer', 'http://linkedin.test', 'Perks: good food'),
+    ('Google', 'on-site', 'Test Engineer', 'http://google.test', '');
 
 

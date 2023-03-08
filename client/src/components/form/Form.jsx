@@ -50,14 +50,26 @@ export default function Form({ content, onDismiss, setRows, rows, button, id}) {
         * Status:
         </b> 
       </label>
+      {content ? 
+        <select name="status" defaultValue={content.status? content.status : null}>
+          <option value="interested">interested</option>
+          <option value="applied">applied</option>
+          <option value="interview">interview</option>
+          <option value="on-site">on-site</option>
+          <option value="offered">offered</option>
+          <option value="rejected">rejected</option>
+        </select> 
+      
+      : 
         <select name="status">
-          <option>interested</option>
-          <option>applied</option>
-          <option>interview</option>
-          <option>on-site</option>
-          <option>offered</option>
-          <option>rejected</option>
+          <option value="interested">interested</option>
+          <option value="applied">applied</option>
+          <option value="interview">interview</option>
+          <option value="on-site">on-site</option>
+          <option value="offered">offered</option>
+          <option value="rejected">rejected</option>
         </select>
+      }
       <label>
         <b>
         Notes: <CustomInput type="text" name="notes" value={content?.notes} />

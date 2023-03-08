@@ -9,13 +9,13 @@ export default function ListItem({ item, index }) {
   const formComponent = <Form content={item} onDismiss={dismissModal} setRows={setRows} button='Update' id={item.id}/>;
   
   return (
-    <li style={{display: 'flex'}} onClick={() => useModal(formComponent)}>
+    <li style={{display: 'flex'}}>
       <div style={{display: 'flex', gap: '0.5rem'}}>
         <div className="row-number">{item.id}</div>
         <div className="company">{item.name}</div>
         <div className="job-title">{item.job_title}</div>
         <div className="status">{item.status}</div>
-        <button className="edit"><i className="fa-solid fa-pen-to-square" /></button>
+        <button className="edit" onClick={() => useModal(formComponent)} ><i className="fa-solid fa-pen-to-square" /></button>
       </div>
     </li>
   );
